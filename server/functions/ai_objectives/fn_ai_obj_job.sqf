@@ -67,7 +67,7 @@ diag_log format ["AI Obj: Active Objectives: %1", _activeObjectives apply {_x ge
 	[_x] call (_x getVariable ["onActivation", {}]);
 } forEach _newlyActiveObjectives;
 
-private _enemyUnits = allUnits select {side group _x == east};
+private _enemyUnits = allUnits select {side group _x == west};
 
 //Calculate our total AI pool size - this is all the AI we have to use.
 private _globalPoolSize = para_s_ai_obj_hard_ai_limit;

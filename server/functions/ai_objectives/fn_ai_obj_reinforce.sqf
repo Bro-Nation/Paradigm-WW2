@@ -57,8 +57,8 @@ private _units = [];
 	_objective getVariable "squad_size",
 	{
 		params ["_squadSize"];
-		private _squadComposition = [_squadType, east, _squadSize, _spawnPosition] call para_g_fnc_spawning_get_squad_composition;
-		private _squad = [_squadComposition, east, _spawnPosition] call para_s_fnc_loadbal_create_squad;
+		private _squadComposition = [_squadType, west, _squadSize, _spawnPosition] call para_g_fnc_spawning_get_squad_composition;
+		private _squad = [_squadComposition, west, _spawnPosition] call para_s_fnc_loadbal_create_squad;
 		_groups pushBack (_squad # 1);
 		_units append (_squad # 0);
 	}

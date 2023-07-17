@@ -35,7 +35,7 @@ _unit addEventHandler ["FiredMan", {
 			{ _x setVariable ["behaviourNextFireEvent", serverTime + para_g_behaviour_firedCooldown] } forEach _nearbyUnits;
 			private _nearbyEnemies = 
 				allUnits inAreaArray [getPos _this, para_g_behaviour_firedDetectionDistance, para_g_behaviour_firedDetectionDistance, 0, false]
-				select {side _x == east};
+				select {side _x == west};
 			private _groups = [];
 			{ _groups pushBackUnique group _x } forEach _nearbyEnemies;
 
