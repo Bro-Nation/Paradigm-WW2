@@ -26,7 +26,7 @@ private _marker = createMarker [
 _building setVariable ["para_s_respawn_marker", _marker];
 //Register as a respawn position
 _building setVariable ["para_s_respawn_id", 
-    [west, _marker] call BIS_fnc_addRespawnPosition
+    [independent, _marker] call BIS_fnc_addRespawnPosition
 ];
 
 private _handler = ["onPlayerRespawn", [{
