@@ -20,8 +20,5 @@
 private _target = selectRandomWeighted (missionNamespace getVariable ["para_s_loadbal_hc_weighted", []]);
 if (!isNil "_target") exitWith { _target };
 
-_target = selectRandomWeighted (missionNamespace getVariable ["para_s_loadbal_players_weighted", []]);
-if (!isNil "_target") exitWith { _target };
-
 // Finally, server is nothing else is available.
 2
