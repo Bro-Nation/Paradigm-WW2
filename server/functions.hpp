@@ -155,6 +155,7 @@ class para_s
 	{
 		PARA_SERVER_PATH(\db);
 		class profile_db {};
+		class db_query {};
 	};
 
 	class harass
@@ -172,6 +173,7 @@ class para_s
 		PARA_SERVER_PATH(\init);
 		class init_server { postInit = 1; };
 		class init_player {};
+		class init_curators {};
 		class postinit_player {};
 	};
 
