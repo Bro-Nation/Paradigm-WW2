@@ -227,10 +227,10 @@ private _assignedUnitFlex = 4;
 		private _unitsToSendCount =
 			_reinforcementsNeeded
 			min
-			_availableReinforcements
-			min
-			_unitsRemainingInGlobalPool
-			max 0;
+			_availableReinforcements;
+
+		// Don't send more than max ai count
+		if (_currentUnitCount + _unitsToSendCount > para_s_ai_obj_hard_ai_limit) exitWith {};
 
 		diag_log format [
 			"AI Obj %1 [%6]: Reinforcing with %2 units. Needed: %3, available: %4, global: %5",
