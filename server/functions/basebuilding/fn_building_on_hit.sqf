@@ -16,7 +16,7 @@
         [parameter] call vn_fnc_myFunction
 */
 
-params ["_building"];
+params ["_building","_step"];
 
 if (isNull _building || _building getVariable ["para_s_building_id", objNull] isEqualType objNull) exitWith {
 	diag_log format ["WARNING: Paradigm: Building on hit called without a valid building by %1", _player];
@@ -26,4 +26,4 @@ if (isNull _building || _building getVariable ["para_s_building_id", objNull] is
 //TODO - This
 //if (!isNull _building/* && {currentWeapon _unit == "vn_m_shovel_01"}*/) then {
 
-[_building, 0.2] call para_s_fnc_building_add_build_progress;
+[_building, _step] call para_s_fnc_building_add_build_progress;
