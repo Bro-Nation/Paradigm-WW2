@@ -49,3 +49,9 @@ if (_newProgress < 1 && _updateObjects) then
 		};
 	} forEach (_building getVariable ["para_g_objects", []]);
 };
+
+//if old progress is zero and gets hammer hit delete the building
+if (_progressChange == -0.5 && _oldProgress == 0) then 
+{
+	[_building] call para_s_fnc_building_delete;
+};

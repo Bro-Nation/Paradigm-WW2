@@ -19,6 +19,14 @@
 
 params ["_hitObject"];
 
+if( (_hitObject isKindOf "Air") || (_hitObject isKindOf "Land"))then {
+	_items = items player;
+	if( ("vn_b_item_toolkit" in _items) || ("ToolKit" in _items) )then {
+		_newDmg = ((damage cursorObject) - 0.05);
+		[_hitObject, _newDmg] remoteExec ["setDamage", 0];
+	};
+};
+
 private _adminState = call BIS_fnc_admin;
 if (_adminState > 0) then
 {
